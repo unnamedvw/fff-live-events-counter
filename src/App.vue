@@ -253,6 +253,7 @@ export default {
     webview_injectAll() {
       this.$sources.items.forEach((source) => {
         this.webview_inject(source)
+        
       })
     },
     webview_inject(_source) {
@@ -332,10 +333,13 @@ export default {
     openExternal(_link) {
       shell.openExternal(_link)
     }
+    
+
   },
   computed: {
     sortedSources() {
-      return this.$sources.items.sort((a, b) => b.result.count.live - a.result.count.live)
+      // return this.$sources.items.sort((a, b) => b.result.count.live - a.result.count.live)
+      return this.$sources.items
     }
   },
   mounted() {

@@ -17,21 +17,12 @@ var headers = document.querySelectorAll('th[align="left"]'),
 acceptableSports = ['футбол', 'хоккей', 'баскетбол', 'волейбол', 'теннис']
 
 if (headers.length) {
-
     headers.forEach(h => {
         result.count.live++
-    
         var ht = h.innerText.trim().toLowerCase()
-    
         for (var i = 0; i < acceptableSports.length; i++) {
-    
             if (ht.indexOf(acceptableSports[i]) > -1) {
-    
-
-
-
                 if (ht.indexOf('кибер') == -1) {
-
                     // football
                     if (ht.indexOf(acceptableSports[i]) > -1 && acceptableSports[i] == 'футбол') {
                         if (ht.indexOf('пляж') == -1) result.count.football++   

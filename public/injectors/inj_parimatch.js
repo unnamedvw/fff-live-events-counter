@@ -25,10 +25,12 @@ function spanElem() {
         }
         var sports = element.querySelector('div[data-testid="modulor-content-text"]').textContent.trim().toLowerCase()
         if (sports == "футбол" || sports == "баскетбол" || sports == "теннис" || sports == "настольный теннис" || sports == "киберспорт" || sports == "волейбол" || sports == "хоккей" || sports == "бадминтон" || sports == "бейсбол" || sports == "крикет" || sports == "кабадди" || sports == "снукер"){
-            obj.text = element.querySelector('span[data-id="expand-collapse-icon-text-title"]').textContent
+            obj.text = sports.length
+             element.querySelector('span[data-id="expand-collapse-icon-text-title"]') ? element.querySelector('span[data-id="expand-collapse-icon-text-title"]').textContent:0
         obj.sport = sports
         obj.elem = element 
-        items.push(obj) }
+        items.push(obj) 
+    }
     })
     return (items)
 }

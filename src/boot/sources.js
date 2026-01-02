@@ -54,8 +54,8 @@ export default ({ Vue }) => {
       },
       url: {
         injectUrl:
-          "http://irsol.tj/mtg2/cgi/!free.CategoryInfo?categoryid=29010669&gameid=15&more=today&lang=rus",
-        website: "http://irsol.tj/"
+          "http://tennisi.tj/mtg2/cgi/!free.CategoryInfo?categoryid=29010669&gameid=15&more=today&lang=rus",
+        website: "http://tennisi.tj/"
       },
       injector: {
         file: "inj_irsol.js",
@@ -156,7 +156,7 @@ export default ({ Vue }) => {
         isLoading: true
       },
       url: {
-        injectUrl: "https://1xbet.tj/ru/live",
+        injectUrl: "https://1xbet.tj/ru/",
         website: "https://1xbet.tj"
       },
       injector: {
@@ -178,13 +178,18 @@ export default ({ Vue }) => {
     }
   ];
 
+  
+
   for (var i = 0; i < items.length; i++) {
     if (items[i].enabled) {
       items[i].injector.code = fs.readFileSync(path.join(process.env.STATICS, `/injectors/${items[i].injector.file}`), 'utf8')
+      // console.log(items[i].injector.code);
+      
     }
   }
 
   Vue.prototype.$sources = new Vue.observable({
     items
   });
+  
 };

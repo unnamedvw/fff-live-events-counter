@@ -180,6 +180,7 @@ function update() {
   var labels = [],
     dataset = { backgroundColor: [], data: [] };
   vue.prototype.$sources.items.forEach(source => {
+    
     if (source.enabled) {
       labels.push(source.visual.title);
       dataset.backgroundColor.push(source.visual.color);

@@ -15,9 +15,7 @@ var result = {
 var panel = document.querySelectorAll(".sportsbook-filter-content")
 if (panel.length) {
     var sports = panel[0].querySelectorAll(".sportsbook-filter-list-item-container")
-
     var items = []
-
     if (sports.length) {
 
         sports.forEach(element => {
@@ -37,12 +35,12 @@ if (panel.length) {
 
     if (items.length) {
         items.forEach(el => {
-            if (el.sport == "football") { result.count.football = el.text }
-            else if (el.sport == "ice hockey") { result.count.hockey = el.text }
-            else if (el.sport == "basketball") { result.count.basketball = el.text }
-            else if (el.sport == "tennis") { result.count.tennis = el.text }
-            else if (el.sport == "table tennis") { result.count.tableTennis = el.text }
-            else if (el.sport == "volleyball") { result.count.volleyball = el.text }
+            if (el.sport.includes("футбол")) { result.count.football = el.text }
+            else if (el.sport == "хоккей") { result.count.hockey = el.text }
+            else if (el.sport == "баскетбол") { result.count.basketball = el.text }
+            else if (el.sport == "теннис") { result.count.tennis = el.text }
+            else if (el.sport == "настольный теннис") { result.count.tableTennis = el.text }
+            else if (el.sport == "волейбол") { result.count.volleyball = el.text }
         })
 
         result.count.live = items.reduce((acc, curr) => acc + parseInt(curr.text), 0);
