@@ -183,7 +183,6 @@ export default ({ Vue }) => {
   for (var i = 0; i < items.length; i++) {
     if (items[i].enabled) {
       items[i].injector.code = fs.readFileSync(path.join(process.env.STATICS, `/injectors/${items[i].injector.file}`), 'utf8')
-      // console.log(items[i].injector.code);
       
     }
   }
