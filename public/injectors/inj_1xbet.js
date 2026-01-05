@@ -36,25 +36,18 @@ if (liElements) {
         if (item) {
             var sportTitle = item.text.trim().toLowerCase();
             if (sportTitle == "футбол") {
-                fb.push(item);
-                result.count.football = fb.length > 1 && fb.length < 3  ? fb.reduce((sum, el) =>sum.count + el.count) : item.count
-                
+                result.count.football += item.count 
             } else if (sportTitle == "теннис") {
-                tn.push(item);
-                result.count.tennis = tn.length > 1 && tn.length < 3  ? tn.reduce((sum, el) =>sum.count + el.count) : item.count
+                result.count.tennis += item.count 
             } else if (sportTitle == "баскетбол") {
-                bb.push(item);
-                result.count.basketball = bb.length > 1 && bb.length < 3  ? bb.reduce((sum, el) =>sum.count  - el.count) : item.count
+                result.count.basketball += item.count 
             } else if (sportTitle == "хоккей") {
-                hk.push(item);
-                result.count.hockey = hk.length > 1 && hk.length < 3  ? hk.reduce((sum, el) =>sum.count + el.count) : item.count
+                result.count.hockey += item.count 
             } else if (sportTitle == "настольный теннис") {
-                tt.push(item);
-                result.count.tableTennis = tt.length > 1 && tt.length < 3  ? tt.reduce((sum, el) =>sum.count + el.count) : item.count
+                result.count.tableTennis += item.count 
                 
             } else if (sportTitle == "волейбол") {
-                vb.push(item);
-                result.count.volleyball = vb.length > 1 && vb.length < 3  ? vb.reduce((sum, el) =>sum.count + el.count) : item.count
+                result.count.volleyball += item.count 
             }
         }
     })
