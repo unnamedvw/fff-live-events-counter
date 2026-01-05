@@ -29,7 +29,8 @@ function spanElem() {
         var sports = element.querySelector('div[data-testid="modulor-content-text"]').textContent.trim().toLowerCase()
         
         if (sports == "футбол" || sports == "баскетбол" || sports == "теннис" || sports == "настольный теннис" || sports == "киберспорт" || sports == "волейбол" || sports == "хоккей" || sports == "бадминтон" || sports == "бейсбол" || sports == "крикет" || sports == "кабадди" || sports == "снукер"){
-            obj.text = parseInt(element.querySelector('[class*="modulor_list-cell__right"]').textContent)
+            var count = element.querySelector('[class*="modulor_list-cell__right"]')
+            obj.text = parseInt(count ?  count.textContent: 0)
             element.querySelector('span[data-id="expand-collapse-icon-text-title"]') ? element.querySelector('span[data-id="expand-collapse-icon-text-title"]').textContent: 0
             
             obj.sport = sports
