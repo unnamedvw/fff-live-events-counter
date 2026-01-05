@@ -45,7 +45,6 @@ if (liElements) {
                 result.count.hockey += item.count 
             } else if (sportTitle == "настольный теннис") {
                 result.count.tableTennis += item.count 
-                
             } else if (sportTitle == "волейбол") {
                 result.count.volleyball += item.count 
             }
