@@ -16,7 +16,7 @@ var result = {
 var liveGames = Array.from(document.querySelectorAll('header[data-sport-id]')),
     football = liveGames.filter(game => game.innerText.toLowerCase().includes('футбол') && !game.innerText.toLowerCase().includes('киберфутбол')),
     basketball = liveGames.filter(game => game.innerText.toLowerCase().includes('баскетбол')),
-    tennis = liveGames.filter(game => game.innerText.toLowerCase().includes('теннис')),
+    tennis = liveGames.filter(game => game.innerText.toLowerCase().includes('теннис') && !game.innerText.toLowerCase().includes('настольный теннис')),
     tableTennis = liveGames.filter(game => game.innerText.toLowerCase().includes('настольный теннис')),
     volleyball = liveGames.filter(game => game.innerText.toLowerCase().includes('волейбол')),
     hockey = liveGames.filter(game => game.innerText.toLowerCase().includes('хоккей'))
