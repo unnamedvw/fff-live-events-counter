@@ -253,23 +253,20 @@ export default {
     webview_injectAll() {
       this.$sources.items.forEach((source) => {
         this.webview_inject(source)
-        
       })
     },
     webview_inject(_source) {
       if (_source) {
         var wv = document.getElementById(`wv__${_source.id}`)
         if (wv) {
-          wv.executeJavaScript(_source.injector.code, true).then((result) => {
-            if (result) {
-              this.webview_handleData(_source, result)
-            } else {
-              _source.state.status = "fail"
-              _source.result.message = "Нет данных из источника"
-            }
-          }).catch(e => {
-            
-          })
+            wv.executeJavaScript(_source.injector.code, true).then((result) => {
+              if (result) {
+                this.webview_handleData(_source, result)
+              } else {
+                _source.state.status = "fail"
+                _source.result.message = "Нет данных из источника"
+              }
+            }).catch(e => {})
         }
       }
     },

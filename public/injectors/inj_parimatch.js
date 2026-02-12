@@ -27,7 +27,6 @@ function spanElem() {
             text: "",
         }
         var sports = element.querySelector('div[data-testid="modulor-content-text"]').textContent.trim().toLowerCase()
-        
         if (sports == "футбол" || sports == "баскетбол" || sports == "теннис" || sports == "настольный теннис" || sports == "киберспорт" || sports == "волейбол" || sports == "хоккей" || sports == "бадминтон" || sports == "бейсбол" || sports == "крикет" || sports == "кабадди" || sports == "снукер"){
             var count = element.querySelector('[class*="modulor_list-cell__right"]')
             obj.text = parseInt(count ?  count.textContent: 0)
