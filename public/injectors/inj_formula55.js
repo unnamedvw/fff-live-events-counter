@@ -14,12 +14,13 @@ var result = {
 
 
 var liveGames = Array.from(document.querySelectorAll('header[data-sport-id]')),
-    football = liveGames.filter(game => game.innerText.toLowerCase().includes('футбол') && !game.innerText.toLowerCase().includes('киберфутбол')),
-    basketball = liveGames.filter(game => game.innerText.toLowerCase().includes('баскетбол')),
-    tennis = liveGames.filter(game => game.innerText.toLowerCase().includes('теннис') && !game.innerText.toLowerCase().includes('настольный теннис')),
-    tableTennis = liveGames.filter(game => game.innerText.toLowerCase().includes('настольный теннис')),
-    volleyball = liveGames.filter(game => game.innerText.toLowerCase().includes('волейбол')),
-    hockey = liveGames.filter(game => game.innerText.toLowerCase().includes('хоккей'))
+    withoutKiber = liveGames.filter(games => !games.innerText.trim().toLowerCase().includes('кибер'))
+    football = withoutKiber.filter(game => game.innerText.toLowerCase().includes('футбол') ),
+    basketball = withoutKiber.filter(game => game.innerText.toLowerCase().includes('баскетбол') ),
+    tennis = withoutKiber.filter(game => game.innerText.toLowerCase().includes('теннис') && !game.innerText.toLowerCase().includes('настольный теннис')),
+    tableTennis = withoutKiber.filter(game => game.innerText.toLowerCase().includes('настольный теннис')),
+    volleyball = withoutKiber.filter(game => game.innerText.toLowerCase().includes('волейбол') ),
+    hockey = withoutKiber.filter(game => game.innerText.toLowerCase().includes('хоккей') )
 
 if (liveGames.length) {
     result.count.live = liveGames.length
