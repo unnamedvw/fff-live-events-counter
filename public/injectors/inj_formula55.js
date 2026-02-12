@@ -33,6 +33,7 @@ if (liveGames.length) {
 
 } else {
     result.message = 'События не найдены'
+
 }
 
 function returnData() {
