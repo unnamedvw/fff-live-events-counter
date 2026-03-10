@@ -41,16 +41,24 @@ function createWindow () {
       // preload: path.resolve(__dirname, 'electron-preload.js')
     }
   })
-
+  
+  
+  
+  
+  
   mainWindow.loadURL(process.env.APP_URL)
 
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+  
+  
+  // mainWindow.webContents.setUserAgent(mainWindow.webContents.getUserAgent())
 
+  
   mainWindow.webContents.on('ipc-message', (event, channel, data) => {
-    console.log('ipcMessage', channel, data)
     if (channel == 'window:restore') {
+      
       mainWindow.isMaximized() ? mainWindow.restore() : mainWindow.maximize()
     } else if (channel == 'window:minimize') {
       mainWindow.minimize()
@@ -63,15 +71,17 @@ function createWindow () {
 }
 
 app.on('ready', createWindow)
-
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
+
 app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
 })
+
+

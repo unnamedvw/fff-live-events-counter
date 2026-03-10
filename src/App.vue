@@ -96,7 +96,7 @@
 
         <!-- webviews -->
         <template>
-          <webview v-for="source in $sources.items" :key="`wv__${source.id}`" class="webview" :partition="`wv__${source.id}`" :src="source.url.injectUrl" :id="`wv__${source.id}`"  v-on:dom-ready="(e) => webview_addListeners(e, source)"> </webview>
+          <webview v-for="source in $sources.items" :key="`wv__${source.id}`" class="webview" :partition="`wv__${source.id}`" :src="source.url.injectUrl" :id="`wv__${source.id}`" useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.248 Safari/537.36" v-on:dom-ready="(e) => webview_addListeners(e, source)"> </webview>
         </template>
 
         <!-- splitter separator -->
